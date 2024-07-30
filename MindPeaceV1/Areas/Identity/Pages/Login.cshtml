@@ -1,0 +1,26 @@
+﻿@page
+@model LoginModel
+@{
+    Layout = "_Layout.cshtml";
+}
+<div class="card-body">
+    <h2 class="card-title text-center mb-4">Login</h2>
+    <form method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Input.Email" for="email">Email</label>
+            <input asp-for="Input.Email"
+                type="email" class="form-control" id="email" placeholder="Enter email" required>
+        </div>
+        <div class="form-group">
+            <label asp-for="Input.Password" for="password">Password</label>
+            <input asp-for="Input.Password"
+                type="password" class="form-control" id="password" placeholder="Enter password" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+        <div class="d-flex justify-content-between mt-3">
+            <a href="#">Forgot Password?</a>
+            <a href="register">Sign Up</a>
+        </div>
+    </form>
+</div>

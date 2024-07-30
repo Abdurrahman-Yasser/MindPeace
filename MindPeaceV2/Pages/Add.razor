@@ -1,0 +1,69 @@
+﻿@page "/add"
+@using Microsoft.EntityFrameworkCore
+@using MindPeaceV2.Data
+@using MindPeaceV2.Data.Models
+@using MindPeaceV2.Components
+@inject ApplicationDbContext _dbContext
+@inject NavigationManager navigationManager
+
+<div class="container mt-5 p-3">
+    <h2 class="mb-4">Profile Form</h2>
+    <EditForm Model="Patient" OnValidSubmit="AddPatient">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <InputText @bind-Value="Patient.Name" class="form-control" id="name" placeholder="Enter your name" required>Lol</InputText>
+        </div>
+        <div class="mb-3">
+            <label for="photoURL" class="form-label">Photo URL</label>
+            <InputText @bind-Value="Patient.PhotoURL" type="url" class="form-control" id="photoURL" placeholder="Enter photo URL"></InputText>
+        </div>
+        <div class="mb-3">
+            <label for="biography" class="form-label">Biography</label>
+            <InputTextArea @bind-Value="Patient.Biography" class="form-control" id="biography" rows="3" placeholder="Enter a short biography"></InputTextArea>
+        </div>
+        <div class="mb-3">
+            <label for="age" class="form-label">Age</label>
+            <InputNumber @bind-Value="Patient.Age" class="form-control" id="age" placeholder="Enter your age"></InputNumber>
+        </div>
+        <div class="mb-3">
+            <label for="gender" class="form-label">Gender</label>
+            <select @bind="Patient.Gender" class="form-select" id="gender">
+                <option selected>Select your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="anonymous">Prefer not to say</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="depressionSeverity" class="form-label">Depression Severity( PHQ-9 )</label>
+            @* <select class="form-select" id="depressionSeverity">
+                <option selected>Select severity</option>
+                <option value="mild">Mild</option>
+                <option value="moderate">Moderate</option>
+                <option value="severe">Severe</option>
+            </select> *@
+            <InputNumber @bind-Value="Patient.DepressionSeverity" class="form-control" id="depressionSeverity" placeholder="Depression Severity in PHQ-9" required></InputNumber>
+        </div>
+        <div class="mb-3">
+            <label for="symptoms" class="form-label">Symptoms</label>
+            <InputTextArea @bind-Value="Patient.Symptoms" class="form-control" id="symptoms" rows="3" placeholder="Enter symptoms"></InputTextArea>
+        </div>
+        <div class="mb-3">
+            <label for="medications" class="form-label">Medications</label>
+            <InputTextArea @bind-Value="Patient.Medications" class="form-control" id="medications" rows="3" placeholder="Enter medications"></InputTextArea>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+        <a class="btn btn-secondary" href="#">Cancel</a>
+    </EditForm>
+</div>
+
+@code {
+    private Patient Patient { get; set; } = new Patient();
+
+    private async void AddPatient()
+    {
+        await _dbContext.Patients.AddAsync(Patient);
+        await _dbContext.SaveChangesAsync();
+        navigationManager.NavigateTo("/profile");
+    }
+}

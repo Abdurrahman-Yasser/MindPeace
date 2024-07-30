@@ -1,0 +1,152 @@
+﻿<div class="calendar">
+    <div class="month align-items-center ">
+        <div class="prev">&#10094;</div>
+        <div class="month-name">July 2024</div>
+        <div class="next">&#10095;</div>
+    </div>
+    <table class="calendar-table">
+        <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td class="good">1</td>
+                <td class="good">2</td>
+                <td class="fantastic">3</td>
+                <td class="normal">4</td>
+                <td class="good">5</td>
+                <td class="fantastic">6</td>
+            </tr>
+            <tr>
+                <td class="normal">7</td>
+                <td class="good">8</td>
+                <td calss='a'>9</td>
+                <td calss="a">10</td>
+                <td class="normal">11</td>
+                <td class="fantastic">12</td>
+                <td class="normal">13</td>
+            </tr>
+            <tr>
+                <td class="normal">14</td>
+                <td calss="bad">15</td>
+                <td class="fantastic">16</td>
+                <td class="good">17</td>
+                <td calss="bad">18</td>
+                <td calss="bad">19</td>
+                <td class="normal">20</td>
+            </tr>
+            <tr>
+                <td class="normal">21</td>
+                <td calss="bad">22</td>
+                <td class="fantastic">23</td>
+                <td calss="bad">24</td>
+                <td class="normal">25</td>
+                <td calss="bad">26</td>
+                <td class="fantastic">27</td>
+            </tr>
+            <tr>
+                <td calss="bad">28</td>
+                <td class="fantastic">29</td>
+                <td class="normal">30</td>
+                <td class="normal">31</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<style>
+    .calendar {
+        /* width: 600px; */
+        height: 560px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        overflow: hidden;
+        /* position: absolute; */
+        /*Positionthecalendarabsolutely*/ top: 20px;
+        /*Adjustthetoppositionasneeded*/ right: 20px;
+        /* Adjust the right position as needed */
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+
+    .month {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #29B1B1;
+        color: #fff;
+        padding: 15px 25px;
+    }
+
+        .month .prev, .month .next {
+            cursor: pointer;
+            user-select: none;
+        }
+
+    .month-name {
+        font-size: 23px;
+    }
+
+    .calendar-table {
+        width: 100%;
+        height: 90%;
+        border-collapse: collapse;
+    }
+
+        .calendar-table th, .calendar-table td {
+            width: 14.28%;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #FAFFAF;
+        }
+
+        .calendar-table th {
+            background-color: #4FC7C7;
+            color: #fff;
+        }
+
+        .calendar-table td {
+            background-color: #f9f9f9;
+        }
+
+            .calendar-table td:hover {
+                background-color: #e6e6e6;
+                cursor: pointer;
+            }
+
+    .good {
+        color: red;
+        font-weight: 900;
+    }
+
+    .fantastic {
+        color: purple;
+        font-weight: 900;
+    }
+
+    .normal {
+        color: green;
+        font-weight: 900;
+    }
+
+    .calendar td {
+        font-weight: 900;
+    }
+</style>
+@* <script src="Calendar.js"></script> *@

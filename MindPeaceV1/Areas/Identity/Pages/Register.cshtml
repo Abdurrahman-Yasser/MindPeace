@@ -1,0 +1,34 @@
+﻿@page
+@model RegisterModel
+@{
+    <div class="card-body">
+        <h2 class="card-title text-center mb-4">Register</h2>
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Input.Username" for="username">Username</label>
+                <input asp-for="Input.Username"
+                       type="text" class="form-control" id="username" placeholder="Enter username" required>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Email" for="email">Email address</label>
+                <input asp-for="Input.Email"
+                       type="email" class="form-control" id="email" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Password" for="password">Password</label>
+                <input asp-for="Input.Password"
+                       type="password" class="form-control" id="password" placeholder="Enter password" required>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.ConfirmPassword" for="confirm-password">Confirm Password</label>
+                <input asp-for="Input.ConfirmPassword"
+                       type="password" class="form-control" id="confirm-password" placeholder="Confirm password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+            <div class="text-center mt-3">
+                <a href="login">Already have an account? Login</a>
+            </div>
+        </form>
+    </div>
+}

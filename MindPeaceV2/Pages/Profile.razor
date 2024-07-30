@@ -1,0 +1,47 @@
+﻿@page "/profile"
+@using Microsoft.EntityFrameworkCore
+@using MindPeaceV2.Data
+@using MindPeaceV2.Data.Models
+@using MindPeaceV2.Components
+@inject ApplicationDbContext _dbContext
+
+@if (data is not null)
+{
+    <div class="d-flex justify-content-between align-items-center p-3">
+        <h3 class="d-inline">Profile</h3>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                Select User
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                @foreach (var obj in data)
+                {
+                    <li><button class="dropdown-item" @onclick="() => ShowDetails(obj)">@obj.Name</button></li>
+                }
+            </ul>
+        </div>
+    </div>
+    @if (Patient.Name is not null)
+    {
+        <PatientComponent Patient="Patient"></PatientComponent>
+    }
+}
+else
+{
+    <h3>Loading...</h3>
+}
+
+@code {
+    public List<Patient>? data { get; set; }
+    Patient Patient = new Patient();
+
+    protected override async Task OnInitializedAsync()
+    {
+        data = await _dbContext.Patients.ToListAsync();
+    }
+
+    private void ShowDetails(Patient patient)
+    {
+        Patient = patient;
+    }
+}
