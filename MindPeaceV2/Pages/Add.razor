@@ -6,7 +6,7 @@
 @inject ApplicationDbContext _dbContext
 @inject NavigationManager navigationManager
 
-<div class="container mt-5 p-3">
+<div class="container mt-1 p-3 mb-2">
     <h2 class="mb-4">Profile Form</h2>
     <EditForm Model="Patient" OnValidSubmit="AddPatient">
         <div class="mb-3">
@@ -56,6 +56,13 @@
         <a class="btn btn-secondary" href="#">Cancel</a>
     </EditForm>
 </div>
+
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+</style>
 
 @code {
     private Patient Patient { get; set; } = new Patient();

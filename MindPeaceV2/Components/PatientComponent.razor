@@ -1,7 +1,7 @@
 ﻿@using MindPeaceV2.Data.Models
 
 <div class="row p-3">
-    <div class="col-lg-8 col-md-8 col-sm-12">
+    <div class="col-lg-7 col-md-12 col-sm-12">
         <div class="card mb-4 shadow-sm">
             <!--Profile Section-->
             <div class="card-body d-flex">
@@ -22,7 +22,7 @@
             <CalendarComponent></CalendarComponent>
         </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-12">
+    <div class="col-lg-5 col-md-12 col-sm-12">
         <div class="card mb-4 shadow-sm">
             <!--Details Section-->
             <div class="card-body">
@@ -71,6 +71,7 @@
                             <td>@Patient.Medications</td>
                         </tr>
                     </table>
+                    <a target="_blank" href="https://screening.mhanational.org/screening-tools/depression/" class="btn btn-success mt-3 shadow-none border-0" style="width:100%; background-color:darkcyan">Take Test</a>
                 </div>
             </div>
         </div>
@@ -80,32 +81,45 @@
             <div class="card-body">
                 <div style="max-height:525px; overflow-y: auto;">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item border-0">Dr. John Smith</li>
-                        <li class="list-group-item border-0">Dr. Emily Johnson</li>
-                        <li class="list-group-item border-0">Dr. Michael Brown</li>
-                        <li class="list-group-item border-0">Dr. Sarah Davis</li>
-                        <li class="list-group-item border-0">Dr. David Wilson</li>
-                        <li class="list-group-item border-0">Dr. Jessica Martinez</li>
-                        <li class="list-group-item border-0">Dr. Christopher Anderson</li>
-                        <li class="list-group-item border-0">Dr. Amanda Thomas</li>
-                        <li class="list-group-item border-0">Dr. Joshua Taylor</li>
-                        <li class="list-group-item border-0">Dr. Jennifer Moore</li>
-                        <li class="list-group-item border-0">Dr. Matthew Jackson</li>
-                        <li class="list-group-item border-0">Dr. Elizabeth White</li>
-                        <li class="list-group-item border-0">Dr. Daniel Harris</li>
-                        <li class="list-group-item border-0">Dr. Patricia Clark</li>
-                        <li class="list-group-item border-0">Dr. Andrew Lewis</li>
-                        <li class="list-group-item border-0">Dr. Megan Lee</li>
-                        <li class="list-group-item border-0">Dr. Benjamin Walker</li>
-                        <li class="list-group-item border-0">Dr. Laura Hall</li>
-                        <li class="list-group-item border-0">Dr. Joseph Allen</li>
-                        <li class="list-group-item border-0">Dr. Angela Young</li>
+                        <li class="list-group-item border-0"><button>Dr. John Smith</button></li>
+                        <li class="list-group-item border-0"><button>Dr. Emily Johnson</button></li>
+                        <li class="list-group-item border-0"><button>Dr. Michael Brown</button></li>
+                        <li class="list-group-item border-0"><button>Dr. Sarah Davis</button></li>
+                        <li class="list-group-item border-0"><button>Dr. David Wilson</button></li>
+                        <li class="list-group-item border-0"><button>Dr. Jessica Martinez</button></li>
+                        <li class="list-group-item border-0"><button>Dr. Christopher Anderson</button></li>
+                        <li class="list-group-item border-0"><button>Dr. Amanda Thomas</button></li>
+                        <li class="list-group-item border-0"><button>Dr. Joshua Taylor</button></li>
+                        <li class="list-group-item border-0"><button>Dr. Jennifer Moore</button></li>
+                        <li class="list-group-item border-0"><button>Dr. Matthew Jackson</button></li>
+                        <li class="list-group-item border-0"><button>Dr. Elizabeth White</button></li>
+                        <li class="list-group-item border-0"><button>Dr. Daniel Harris</button></li>
+                        <li class="list-group-item border-0"><button>Dr. Patricia Clark</button></li>
+                        <li class="list-group-item border-0"><button>Dr. Andrew Lewis</button></li>
+                        <li class="list-group-item border-0"><button>Dr. Megan Lee</button></li>
+                        <li class="list-group-item border-0"><button>Dr. Benjamin Walker</button></li>
+                        <li class="list-group-item border-0"><button>Dr. Laura Hall</button></li>
+                        <li class="list-group-item border-0"><button>Dr. Joseph Allen</button></li>
+                        <li class="list-group-item border-0"><button>Dr. Angela Young</button></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<style>
+    .list-group-item button {
+        color: #000; /* Default color */
+        background: none;
+        border: none;
+        text-decoration: none;
+    }
+
+        .list-group-item button:hover {
+            color: #007bff; /* Color on hover */
+        }
+</style>
 
 @code {
     [Parameter]

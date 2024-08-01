@@ -1,25 +1,64 @@
 ﻿@inherits LayoutComponentBase
 
 <PageTitle>Mind Peace</PageTitle>
+<AuthorizeView>
+    <Authorized>
+        <div class="page">
+            <div style="background-image:none;background-color:darkcyan;" class="sidebar">
+                <NavMenu />
+            </div>
 
-<div class="page">
-    <div style="background-image:none;background-color:darkcyan;" class="sidebar">
-        <NavMenu />
-    </div>
+            <main>
+                <article class="content p-0 d-flex flex-column" style="height:100%;">
+                    <div class="flex-grow-1">@Body</div>
 
-    <main>
-        <article class="content p-0">
-            @Body
-            <br />
-            <br />
-            <br />
-            <footer class="container" style="position:absolute; bottom:0px;">
-                <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                    <div class="col-md-4 d-flex align-items-center">
-                        <span class="text-muted">© 2024 MindPeace (e-FC.club.edu.eg.killourselves.org)</span>
-                    </div>
-                </footer>
-            </footer>
-        </article>
-    </main>
-</div>
+                    <footer class="text-white py-5" style="background-color:#00b2b2;">
+                        <div class="container">
+                            <div class="row">
+                                <!-- Our Mission Section -->
+                                <div class="col-md-3 mb-3">
+                                    <h6 class="text-uppercase">Our Mission</h6>
+                                    <p class="small">At Mind Peace, we aim to make it easy for individuals experiencing depression to find help and support. We strive to increase awareness and accessibility for those in need.</p>
+                                </div>
+                                <!-- Contact Us Section -->
+                                <div class="col-md-3 mb-3">
+                                    <h6 class="text-uppercase">Contact Us</h6>
+                                    <p class="small mb-1"><strong>Email:</strong> <a href="mailto:mind.peace@e-fc.com" class="text-white">mind.peace@e-fc.com</a></p>
+                                    <p class="small mb-1"><strong>Support Email:</strong> <a href="mailto:mind.peace.support@e-fc.com" class="text-white">mind.peace.support@e-fc.com</a></p>
+                                    <p class="small mb-1"><strong>Availability:</strong> 24/7, all online</p>
+                                </div>
+                                <!-- Connect with Us Section -->
+                                <div class="col-md-3 mb-3">
+                                    <h6 class="text-uppercase">Connect with Us</h6>
+                                    <a href="#" class="d-block text-white small">LinkedIn</a>
+                                </div>
+                                <!-- Legal Section -->
+                                <div class="col-md-3 mb-3">
+                                    <h6 class="text-uppercase">Legal</h6>
+                                    <a href="#" class="d-block text-white small">Privacy Policy</a>
+                                    <a href="#" class="d-block text-white small">Terms of Service</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 mt-3">
+                                    <h6 class="text-uppercase">Community Involvement</h6>
+                                    <p class="small">We are proud to support the DECI Scholarship and the e-FC team, contributing to a brighter future for all.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </article>
+            </main>
+        </div>
+        <script>
+            document.addEventListener("wheel", function (event) {
+                if (document.activeElement.type === "number") {
+                    document.activeElement.blur();
+                }
+            });
+        </script>
+    </Authorized>
+    <NotAuthorized>
+        <MindPeaceV2.Components.NonAuthorized></MindPeaceV2.Components.NonAuthorized>
+    </NotAuthorized>
+</AuthorizeView>
